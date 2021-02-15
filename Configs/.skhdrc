@@ -1,0 +1,60 @@
+# navigation
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# moving windows
+shift + alt - h : yabai -m window --warp west
+shift + alt - j : yabai -m window --warp south
+shift + alt - k : yabai -m window --warp north
+shift + alt - l : yabai -m window --warp east
+
+# resize windows
+lctrl + alt - h : \
+    yabai -m window --resize left:-20:0 ; \
+    yabai -m window --resize right:-20:0
+
+lctrl + alt - j : \
+    yabai -m window --resize bottom:0:20 ; \
+    yabai -m window --resize top:0:20
+
+lctrl + alt - k : \
+    yabai -m window --resize top:0:-20 ; \
+    yabai -m window --resize bottom:0:-20
+
+lctrl + alt - l : \
+    yabai -m window --resize right:20:0 ; \
+    yabai -m window --resize left:20:0
+
+# equalize window size
+lctrl + alt - 0 : yabai -m space --balance
+
+# make window fullscreen (native)
+alt - f : yabai -m window --toggle native-fullscreen
+
+# toggle current space layout
+cmd + lctrl - u : yabai -m space --layout bsp
+cmd + lctrl - f : yabai -m space --layout float
+
+# pin window to always on top
+cmd + lctrl - p : yabai -m config window_topmost on || yabai -m config window_topmost off
+
+# temporarily float and center window
+shift + alt - space : yabai -m window --toggle float;\
+					  yabai -m window --grid 4:4:1:1:2:2
+
+# reset padding/gap to my preferred defaults (18)
+shift + alt - 0 : \
+	yabai -m space --padding abs:18:18:18:18 ; \
+	yabai -m space --gap abs:18
+
+# add 6 to padding/gap
+shift + alt - 0x18 : \
+	yabai -m space --padding rel:06:06:06:06; \
+	yabai -m space --gap rel:06
+
+# subtract 6 from padding/gap
+shift + alt - 0x1B : \
+	yabai -m space --padding rel:-6:-6:-6:-6; \
+	yabai -m space --gap rel:-6
