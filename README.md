@@ -1,4 +1,3 @@
-# Dotfiles
-Configurations &amp; Others
+# Dotfiles & Others
 
 Hi, Reddit!
