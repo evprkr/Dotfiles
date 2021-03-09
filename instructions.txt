@@ -1,0 +1,1 @@
+add 'browser.urlbar.openViewOnFocus' to about:config and set it to false
