@@ -1,18 +1,14 @@
-/* Custom Stuff */
+/* Random Junk */
+#navigator-toolbox > * { background-color: #222 !important; }
+.tab-background[selected="true"] { background-image: none !important; }
 
-#navigator-toolbox > * {
-    background-color: #222;
-}
-
-.tab-background[selected="true"] {
-    background-image: none !important;
-}
-
+/* Tab bar adjustments */
 #tabbrowser-tabs { margin-top: 5px !important; margin-left: 10px !important; margin-right: 5px !important;}
-
+.tabbrowser-tab::before, .tabbrowser-tab::after { display: none !important; }
 .titlebar-buttonbox { margin-top: 4px !important; /*margin-right: 6px !important;*/ }
 
-#nav-bar:not([customizing="true"]):not([inFullscreen]) {
+/* Autohide URL bar */
+:root[sessionrestored] #nav-bar:not([customizing="true"]):not([inFullscreen]) {
     min-height: 0px !important;
     max-height: 0px !important;
     margin-bottom: -1px !important;
@@ -31,6 +27,7 @@
     z-index: 1 !important;
 }
 
+/* Remove back button when not hovered */
 #back-button, #back-button > .toolbarbutton-icon {
     transform: scale(.95,.95) !important; 
     background: transparent !important;
@@ -38,8 +35,7 @@
     box-shadow: none !important;
 }
 
-.tabbrowser-tab::before, .tabbrowser-tab::after { display: none !important; }
-
+/* Assorted UI annoyances */
 #PanelUI-button {
     border-image-slice: 0 !important;
     margin-left: -8px !important;
@@ -54,20 +50,14 @@
 .titlebar-spacer
 { display: none; }
 
-#back-button {
-  background-color: none !important;
-}
+#back-button { background-color: none !important; }
 
 #urlbar-input { margin-left: 10px !important; }
 #urlbar-background { background-color: #333 !important; border: none !important;}
 
 .tabbrowser-tab[fadein]{ max-width: 100vw !important }
 
-/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/combined_favicon_and_tab_close_button.css made available under Mozilla Public License v. 2.0
-See the above repository for updates as well as full license text. */
-
 /* Show tab close button when cursor is over the tab icon */
-
 .tab-close-button{
   -moz-box-ordinal-group: 0;
   display: -moz-box !important;
@@ -81,36 +71,15 @@ See the above repository for updates as well as full license text. */
 
 .tabbrowser-tab[selected] .tab-close-button:hover{ background-color: var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)); }
 
-/**** ONLY USE ONE OF THE FOLLOWING ****/
-/**** These select the behavior of a scenario where the page has no favicon ****/
 
-/*** Option 1 - no favicon - no close-button ***/
-
-/*
-.tab-icon-image:hover ~ .tab-close-button, .tab-close-button:hover{ visibility: visible; z-index: 1 }
-*/
-
+/* Tab close button beneat favicon */
 /*** Option 2 - No icon - always show close-button ***/
-
-
 .tab-icon-image:hover ~ .tab-close-button,
 .tab-close-button:hover,
 .tab-icon-image:not([src]) ~ .tab-close-button{ visibility: visible; z-index: 1 }
 .tab-icon-image:not([src]) ~  .tab-close-button{ margin-right:0px !important; }
 
-/*** Option 3 - No icon - show close-button when cursor is over the tab text ***/
-
-.tab-icon-image:hover ~ .tab-close-button,
-.tab-close-button:hover,
-.tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button{ visibility: visible; z-index: 1 }
-.tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button,
-.tab-icon-image:not([src]) ~  .tab-close-button:hover {margin-right: 0px !important; }
-
-/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/round_ui_items.css made available under Mozilla Public License v. 2.0
-See the above repository for updates as well as full license text. */
-
-/* Make bunch of things in the main UI round */
-
+/* Rounded UI stuffs */
 :root{ --toolbarbutton-border-radius: 24px !important }
 #urlbar-input-container > box:hover,
 #urlbar-input-container > box[open],
